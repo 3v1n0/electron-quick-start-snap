@@ -18,9 +18,11 @@ parts:
   electron-quick-start-deps:
     plugin: nil
     stage-packages:
+      - libappindicator3-1
       - libdbusmenu-glib4
       - libnotify4
       - libnss3
+      - libunity9
       - fontconfig-config
 
   electron-quick-start-files:
