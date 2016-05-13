@@ -18,6 +18,8 @@ parts:
   electron-quick-start-deps:
     plugin: nil
     stage-packages:
+      - libdbusmenu-glib4
+      - libnotify4
       - libnss3
       - fontconfig-config
 
