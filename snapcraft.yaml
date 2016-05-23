@@ -9,23 +9,27 @@ apps:
     plugs: [unity7, network]
 
 parts:
-  electron-quick-start-src:
+  src:
     plugin: nodejs
     node-packages:
      - electron-prebuilt
     source: git://github.com/electron/electron-quick-start
 
-  electron-quick-start-deps:
+  deps:
+    plugin: nil
+    stage-packages:
+      - libnss3
+      - fontconfig-config
+
+  desktop-integration:
     plugin: nil
     stage-packages:
       - libappindicator3-1
       - libdbusmenu-glib4
       - libnotify4
-      - libnss3
       - libunity9
-      - fontconfig-config
 
-  electron-quick-start-files:
+  launcher:
     plugin: copy
     files:
       electron-quick-start: electron-quick-start.wrapper
