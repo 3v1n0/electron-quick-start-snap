@@ -1,24 +1,28 @@
 name: electron-quick-start
 version: 1.0
 summary: Electron Quick Start
-description: This is a minimal Electron application based on the Quick Start Guide within the Electron documentation.
+description: This is a minimal Electron application based on the
+  Quick Start Guide within the Electron documentation.
+confinement: "devmode"
 
 apps:
   electron-quick-start:
     command: electron-quick-start.wrapper
-    plugs: [unity7, network]
+    plugs: [unity7, network, process-control]
 
 parts:
   src:
     plugin: nodejs
     node-packages:
-     - electron-prebuilt
+     - electron
     source: git://github.com/electron/electron-quick-start
 
   deps:
     plugin: nil
     stage-packages:
+      - libgconf-2-4
       - libnss3
+      - libxss1
       - fontconfig-config
 
   desktop-integration:
