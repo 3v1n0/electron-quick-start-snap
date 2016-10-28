@@ -3,11 +3,13 @@ version: 1.0
 summary: Electron Quick Start
 description: This is a minimal Electron application based on the
   Quick Start Guide within the Electron documentation.
-confinement: "devmode"
+confinement: "strict"
 
 apps:
   electron-quick-start:
     command: electron-quick-start.wrapper
+    # After install need to connect plugs manually:
+    # sudo snap connect electron-quick-start:process-control ubuntu-core:process-control
     plugs: [unity7, network, process-control]
 
 parts:
