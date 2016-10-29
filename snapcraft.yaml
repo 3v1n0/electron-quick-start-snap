@@ -8,9 +8,10 @@ confinement: "strict"
 apps:
   electron-quick-start:
     command: electron-quick-start.wrapper
-    # After install need to connect plugs manually:
-    # sudo snap connect electron-quick-start:process-control ubuntu-core:process-control
-    plugs: [unity7, network, process-control]
+    plugs:
+     - unity7
+     - network
+     - browser-support
 
 parts:
   src:
