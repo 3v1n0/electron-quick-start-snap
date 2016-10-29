@@ -44,4 +44,4 @@ parts:
     plugin: copy
     files:
       electron-quick-start: electron-quick-start.wrapper
-    after: [desktop/glib-only]
+    after: [desktop-glib-only]
