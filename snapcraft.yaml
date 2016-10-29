@@ -7,11 +7,12 @@ confinement: "strict"
 
 apps:
   electron-quick-start:
-    command: electron-quick-start.wrapper
+    command: desktop-launch $SNAP/electron-quick-start.wrapper
     plugs:
      - browser-support
      - network
      - unity7
+     - gsettings
      # - home
      # - pulseaudio
      # - opengl
@@ -43,3 +44,4 @@ parts:
     plugin: copy
     files:
       electron-quick-start: electron-quick-start.wrapper
+    after: [desktop/glib-only]
