@@ -9,9 +9,12 @@ apps:
   electron-quick-start:
     command: electron-quick-start.wrapper
     plugs:
-     - unity7
-     - network
      - browser-support
+     - network
+     - unity7
+     # - home
+     # - pulseaudio
+     # - opengl
 
 parts:
   src:
@@ -31,7 +34,7 @@ parts:
   desktop-integration:
     plugin: nil
     stage-packages:
-      - libappindicator3-1
+      - libappindicator1
       - libdbusmenu-glib4
       - libnotify4
       - libunity9
